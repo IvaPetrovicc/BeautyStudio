@@ -7,7 +7,7 @@
             <div class="block md:hidden absolute top-0 left-0 h-full w-full bg-[rgba(0,0,0,0.40)]"></div>
 
             <!-- Hero text -->
-            <h1 h1 class="mx-auto text-center md:text-left md:leading-[3rem] text-black-500 text-2xl font-bold drop-shadow-lg shadow-black z-10 md:w-[50%] lg:w-[30%] md:text-4xl md:pl-10">
+            <h1 h1 class="mx-auto text-center md:text-left md:leading-[3rem] text-gray-700 text-2xl font-bold drop-shadow-lg shadow-black z-10 md:w-[50%] lg:w-[30%] md:text-4xl md:pl-10">
     Beauty comes from inside, inside the beauty salon.
             </h1>
         </div>
@@ -18,7 +18,7 @@
                 <label for="countries" class="block mb-2 text-sm font-medium text-dark">Odaberite
                     termin</label>
                 <select v-model="type" id="countries"
-                    class="bg-gray-500 border border-gray-800 text-white-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500">
+                    class="bg-gray-700 border border-gray-00 text-white-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500">
                     <option selected value="">Odabir vrste termina</option>
                     <option value="Nokti">Nadogradnja Noktiju gelom</option>
                     <option value="TrajniLak">Nokti - trajni lak</option>
@@ -41,7 +41,7 @@
             </Datepicker>
 
             <!-- Success message  -->
-            <div v-if="success" class="flex items-center bg-pink-500 text-white text-sm font-bold px-4 py-3"
+            <div v-if="success" class="flex items-center bg-pink-700 text-white text-sm font-bold px-4 py-3"
                 role="alert">
                 <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
@@ -50,34 +50,29 @@
             </div>
 
             <!-- Error message  -->
-            <div v-if="error" class="flex items-center bg-gray-500 text-white text-sm font-bold px-4 py-3" role="alert">
-                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M11 0h3L9 20H6l5-20zm1 11V9h2v2h-2zm0 4V13h2v2h-2z" />
-                </svg>
+            <div v-if="error" class="flex items-center bg-gray-500 text-white text-sm font-bold px-4 py-3 px-6 py-4 border-t-4 border-pink-700 rounded-b shadow-md" role="alert">
+                
                 <p>Termin koji ste odabrali nije dostupan</p>
             </div>
 
             <!-- Error message  -->
-            <div v-if="type === ''" class=" flex items-center bg-gray-500 text-white text-sm font-bold px-4 py-3"
+            <div v-if="type === ''" class=" flex items-center bg-gray-500 text-white text-sm font-bold px-4 py-3 px-6 py-4 border-t-4 border-pink-700 rounded-b shadow-md"
                 role="alert">
-                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M11 0h3L9 20H6l5-20zm1 11V9h2v2h-2zm0 4V13h2v2h-2z" />
-                </svg>
+                
+                   
                 <p>Molimo odaberite vrstu termina</p>
             </div>
 
             <!-- Button error message -->
             <div v-if="user.loggedIn === false"
-                class="flex items-center bg-gray-500 text-white text-sm font-bold px-4 py-3" role="alert">
-                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M11 0h3L9 20H6l5-20zm1 11V9h2v2h-2zm0 4V13h2v2h-2z" />
-                </svg>
+                class="flex items-center bg-gray-500 text-white text-sm font-bold px-4 py-3 px-6 py-4 border-t-4 border-pink-700 rounded-b shadow-md" role="alert">
+                
                 <p>Morate biti prijavljeni kako biste rezervirali termin</p>
             </div>
 
             <!-- Button -->
             <button :disabled="user.loggedIn === false || error === true || type === ''" @click="addAppointment"
-                class="bg-pink-500 hover:bg-white-700 disabled:bg-dark disabled:text-light float-right text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                class="bg-pink-700 hover:bg-white-700 disabled:bg-gray-600 disabled:text-light float-right text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Rezerviraj termin
             </button>
         </div>

@@ -10,7 +10,7 @@ module.exports = {
         light: "#F5F5F5", // light grey
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/images/hero.webp.jpg')",
+        "hero-pattern": "url('/src/assets/images/pic.jpeg')",
         "hero-pattern-mobile": "url('/src/assets/images/hero-mobile.jpg')",
       },
     },
